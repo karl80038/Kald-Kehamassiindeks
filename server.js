@@ -5,9 +5,12 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.listen(3000, function(){
-    console.log('Server has started on Port 3000')
-});
+// app.listen(3000, function(){
+//     console.log('Server has started on Port 3000')
+// });
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Server has started");
+})
 
 app.get("/", function(request, response){
     response.sendFile(__dirname + '/index.html');
